@@ -17,16 +17,14 @@ def download_audio(url, output="audio.mp3"):
 
 
 def transcribe_audio(file_path):
-    model = whisper.load_model("base")  # options: tiny, base, small, medium, large
+    model = whisper.load_model("base")
     result = model.transcribe(file_path)
     return result["text"]
 
 if __name__ == "__main__":
-    url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"  # replace with any video
+    url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
     audio_file = download_audio(url)
     text = transcribe_audio(audio_file)
     print("\n--- TRANSCRIPT ---\n")
     print(text)
-
-
 
